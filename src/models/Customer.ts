@@ -1,17 +1,12 @@
 import { Document, Schema, model } from "mongoose";
 
 interface ICustomer extends Document {
-  id: string;
   name: string;
   address: string;
   salary: number;
 }
 
 const CustomerSchema = new Schema({
-  id: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
     required: true,
@@ -26,4 +21,4 @@ const CustomerSchema = new Schema({
   },
 });
 
-export const customer = model<ICustomer>("Customer", CustomerSchema);
+export const Customer = model<ICustomer>("Customer", CustomerSchema);

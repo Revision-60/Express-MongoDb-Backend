@@ -5,8 +5,11 @@ import express, { Request, Response } from "express";
 import db from "mongoose";
 import routes from "./routes";
 import { json, urlencoded } from "body-parser";
+import cors from "cors";
 
 const app = express();
+
+app.use(cors());
 
 app.use(json());
 app.use(urlencoded());
