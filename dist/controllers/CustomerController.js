@@ -86,6 +86,23 @@ class CustomerController {
                 }
             }
         });
+        this.searchCustomer = (req, res) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                let { id } = req.params;
+                let customer = yield Customer_1.Customer.findById(id);
+                return res
+                    .status(200)
+                    .json({ message: "Successfully Loaded..!", responseData: customer });
+            }
+            catch (error) {
+                if (error instanceof Error) {
+                    return res.status(500).json({ message: error.message });
+                }
+                else {
+                    return res.status(500).json({ message: "Unknown Error!" });
+                }
+            }
+        });
     }
 }
 exports.default = CustomerController;

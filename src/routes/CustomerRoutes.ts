@@ -14,6 +14,7 @@ export default class CustomerRoutes {
     this.router.get("/", this.controller.getAllCustomer);
     this.router.put("/:id", this.controller.updateCustomer);
     this.router.delete("/:id", this.controller.deleteCustomer);
+    this.router.get("/:id", this.controller.searchCustomer);
   };
 
   public getRouter = (): Router => {
